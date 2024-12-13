@@ -101,5 +101,84 @@ insert into [SCHEMA NAME].[TABLE NAME]([variable], [variable], [variable], [vari
 	values ('[X]', '[X]', [X], '[X-date]', '[X]')
            ,('[X]', '[X]', [X], '[X-date]', '[X]');
 ```
+### Creating table with foreign key
+```sql
+create table [SCHEMA NAME].[TABLE NAME] (
+	[variable] integer PRIMARY KEY,
+	[variable] varchar(255),
+	[variable] varchar(255),
+	constraint FK_[variable that refers to primary key] foreign key ([variable that refers to primary key])
+	references bi.[PRIMARY TABLE NAME] (id)
+	);
+```
+
+### Creating multiple tables with connections and constraints
+```sql
+-- Department table
+create table bi.Department (
+	department_code serial primary key,
+	deparment_name varchar(255),
+	department_location varchar(255)
+);
+
+insert into BI.Department
+	values (default, 'Computer Science', 'Aarhus C'),
+		  (default, 'Economics and Business Economics', 'Aarhus V'),
+		  (default, 'Law', 'Aarhus C'),
+		  (default, 'Medicine', 'Aarhus C');
 
 
+-- Student table
+create table bi.Student (
+	student_number serial primary key,
+	student_name varchar(255),
+	department_code integer,
+	constraint FK_department_code foreign key(department_code)
+	references BI.Department (department_code)
+);
+
+insert into BI.Student
+	values (default, 'Birgit', 2),
+		  (default, 'Anders', 1),
+		  (default, 'Pia', 3),
+		  (default, 'Henrik', 3);
+
+-- Course
+create table BI.Course(
+	course_id serial primary key,
+	course_name varchar(250),
+	course_major varchar(250)
+);
+
+insert into bi.Course 
+	values (default, 'Programming I', 'BSc in Computer Science')
+		  ,(default, 'Principles of Economics', 'BSc in Economics')
+		  ,(default, 'Distributed systems', 'BSc in Computer Science')
+		  ,(default, 'Animal Law', 'Bsc in Law')
+		  ,(default, 'Biochemistry', 'Bsc in Medicine')
+		  
+-- Student course
+create table BI.Student_course(
+	student_number integer,
+	course_id integer,
+	accepted varchar(50),
+	constraint PK_student_course primary key (student_number, course_id),
+	constraint FK_student_number foreign key (student_number)
+	references BI.Student (student_number),
+	constraint FK_course_id foreign key (course_id)	
+	references BI.Course (course_id)
+	);
+
+insert into BI.student_course
+	values (1, 2, 'Accepted')
+		  ,(1, 3, 'Not accepted')
+		  ,(2, 1, 'Accepted')
+		  ,(3, 4, 'Accepted')
+		  ,(3, 3, 'Awaiting')
+		  ,(4, 2, 'Not accepted');
+-- Drop tables
+drop table BI.Student_course;
+drop table BI.course;
+drop table BI.Student;
+drop table BI.Department;
+```
