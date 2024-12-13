@@ -37,7 +37,7 @@ where [condition] >=< [X] and [condition] >=< [X];
 ```sql
 select [variable], [variable], [variable]
 from [table]
-where ([variable] between '2007-02-19 19:00:00' and '2007-02-20 19:00:00') and [condition] > >=< [X];
+where ([variable] between '2007-02-19 19:00:00' and '2007-02-20 19:00:00') and [condition] >=< [X];
 ```
 ### Select rows sorted (ascending and descending)
 ```sql
@@ -49,5 +49,28 @@ select *
 from [table]
 order by [variable] desc;
 ```
+### Select number of [variable] and creating new variable 
+```sql
+select [variable], count([variable]) as [new_variable]
+from [table]
+group by [variable]
+order by [new_variable] desc 
+limit [X];
+```
+### Select number of [variable] and creating new variable with conditions
+```sql
+select [variable], count([variable]) as [new_variable]
+from [table]
+group by [variable]
+having count [variable] >=< [X] and count[variable] >=< [X];
+```
+
+### Computing average of column
+```sql
+select avg([variable])
+from [table];
+```
+
+
 ## CREATE TABLE
 
