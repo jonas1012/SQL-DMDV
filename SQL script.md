@@ -1,9 +1,10 @@
-# Code Snippets by Lecture Slides
+# Code Snippets from SQL
 
 ## SELECT statements
 ```sql
-# Simple Python code
-print("Hello, GitHub!")
+# Select all from table
+SELECT *
+FROM table;
 ```
 
 ## Lecture 2: Introduction to Python
