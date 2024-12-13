@@ -182,3 +182,20 @@ drop table BI.course;
 drop table BI.Student;
 drop table BI.Department;
 ```
+
+## Joining tables for returns of data from multiple tables
+### Inner join
+```sql
+select *
+from [SCHEMA].[TABLE] 
+inner join
+[SCHEMA].[TABLE2] 
+on [variable] = [variable];
+```
+### Inner join with constraints
+select [TABLE].[variable],
+	   [TABLE].[variable]	   
+from [SCHEMA].[TABLE] 
+inner join [SCHEMA].[variable] 
+on [variable] = [variable]; 
+
