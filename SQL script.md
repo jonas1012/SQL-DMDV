@@ -3,4 +3,6 @@
 ## Lecture 1: Introduction to Python
 ```SQL
 # Simple Python code
-print("Hello, GitHub!")
+print("Hello, GitHub!")```
+
+## Lecture 2: Introduction to Python
