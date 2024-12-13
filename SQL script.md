@@ -1,15 +1,18 @@
 # Code Snippets from SQL
 
 ## SELECT statements
+
+### Select all from table
 ```sql
-# Select all from table
 SELECT *
 FROM [table];
-
-# Select X amount of columns
+```
+### Select X amount of columns
+```sql
 select *
 from [table]
 limit 10;
+```
 
 # Select distinct values from a variable
 select distinct [variable]
