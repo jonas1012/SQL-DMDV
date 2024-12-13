@@ -1,6 +1,6 @@
-# SQL script
-## Creating tables
-'''SQL
-# Select statement
-SELECT *
-FROM table_1;
+# Code Snippets by Lecture Slides
+
+## Lecture 1: Introduction to Python
+```python
+# Simple Python code
+print("Hello, GitHub!")
