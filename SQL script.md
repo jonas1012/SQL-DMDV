@@ -1,4 +1,6 @@
 # SQL script
 ## Creating tables
-'''SELECT *
-FROM
+'''SQL
+# Select statement
+SELECT *
+FROM table_1;
