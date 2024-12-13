@@ -14,16 +14,21 @@ from [table]
 limit 10;
 ```
 
-# Select distinct values from a variable
+### Select distinct values from a variable
+```sql
 select distinct [variable]
 from [table];
+```
 
-# Select rows where it fulfills a certain condition
+### Select rows where it fulfills a certain condition
+```sql
 select [variable]
 from [table]
 where [condition] >=< [X];
+```
 
-# Select multiple variables which upholds multiple conditions
+### Select multiple variables which upholds multiple conditions
+```sql
 select [variable], [variable], [variable]
 from [table]
 where [condition] >=< [X] and [condition] >=< [X];
