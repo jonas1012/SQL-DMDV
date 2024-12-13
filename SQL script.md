@@ -71,6 +71,35 @@ select avg([variable])
 from [table];
 ```
 
+### Creating buckets (above average, at the average and below) 
+```sql
+select [variable],  
+	case
+		when [variable] > [X] then 'Above average'
+		when [variable] = [X] then 'At the average'
+		when [variable] < [X] then 'Below the average'
+		else 'No data available'
+	end as [new_variable]
+from [table];
+```
 
 ## CREATE TABLE
+### Creating a table with varchar, integer, decimal, timestamp and boolean
+```sql
+create table [SCHEMA NAME].[TABLE NAME] (
+	[id] serial,
+	[variable] varchar(200),
+	[variable] integer,
+	[variable] decimal(10, 3),
+	[variable] timestamp,
+	[variable] boolean
+);
+```
+### Inserting data into a table
+```sql
+insert into [SCHEMA NAME].[TABLE NAME]([variable], [variable], [variable], [variable], [variable]) 
+	values ('[X]', '[X]', [X], '[X-date]', '[X]')
+           ,('[X]', '[X]', [X], '[X-date]', '[X]');
+```
+
 
