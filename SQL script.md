@@ -193,9 +193,10 @@ inner join
 on [variable] = [variable];
 ```
 ### Inner join with constraints
+```sql
 select [TABLE].[variable],
 	   [TABLE].[variable]	   
 from [SCHEMA].[TABLE] 
 inner join [SCHEMA].[variable] 
 on [variable] = [variable]; 
-
+```
