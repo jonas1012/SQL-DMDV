@@ -1,7 +1,7 @@
 # Code Snippets by Lecture Slides
 
 ## Lecture 1: Introduction to Python
-```SQL
+```sql
 # Simple Python code
 print("Hello, GitHub!")```
 
